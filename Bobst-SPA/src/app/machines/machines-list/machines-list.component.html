@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Production</th>
+    </tr>
+    <tr *ngFor="let machine of machines">
+      <td><a href="#" (click)="handleClick(machine.machineId)">{{machine.machineId}}</a></td>
+      <td>{{machine.name}}</td>
+      <td>{{machine.production}}</td>
+      <td>
+        <button (click)="onDelete(machine.machineId)"><i class="far fa-trash-alt fa-lg text-danger"></i></button>
+      </td>
+    </tr>
+  </table>
+</div>

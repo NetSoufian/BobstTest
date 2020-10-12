@@ -1,0 +1,17 @@
+[
+  {
+    "MachineId": 1,
+    "Name": "Machine A",
+    "Description": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
+  },
+  {
+    "MachineId": 2,
+    "Name": "Machine B",
+    "Description": "Quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre."
+  },
+  {
+    "MachineId": 3,
+    "Name": "Machine C",
+    "Description": "Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum."
+  }
+]

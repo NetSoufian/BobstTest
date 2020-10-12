@@ -1,0 +1,18 @@
+.table a {
+    color: red;
+    background-color:white;
+}
+
+.table a:link, a:visited, a:hover, a:active
+{
+    background-color: green;
+    cursor: pointer;
+}
+
+td {
+  font-size: 20px;
+}
+
+th {
+  font-size: 25px;
+}

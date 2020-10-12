@@ -1,0 +1,17 @@
+[
+  {
+    "MachineProductionId": 1,
+    "MachineId": 3,
+    "TotalProduction": 87
+  },
+  {
+    "MachineProductionId": 2,
+    "MachineId": 1,
+    "TotalProduction": 30
+  },
+  {
+    "MachineProductionId": 3,
+    "MachineId": 2,
+    "TotalProduction": 54
+  }
+]

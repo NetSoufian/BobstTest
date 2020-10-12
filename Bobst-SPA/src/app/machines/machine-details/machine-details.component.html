@@ -1,0 +1,21 @@
+<div *ngIf="displayDetails" class="container">
+  <table class="table">
+    <tr>
+      <th>Machine</th>
+      <th>Description</th>
+      <th>Total production</th>
+    </tr>
+    <tr>
+      <td>{{ machineDetails?.name }}</td>
+      <td>{{ machineDetails?.description }}</td>
+      <td>{{ machineDetails?.production }}</td>
+    </tr>
+  </table>
+  <br />
+  <a href="#" (click)="onCancel()">Back to machine list</a>
+</div>
+
+<app-machines-list
+  *ngIf="!displayDetails"
+  (notify)="getMachineDetails($event)"
+></app-machines-list>
