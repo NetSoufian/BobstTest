@@ -24,7 +24,7 @@ export class MachinesListComponent implements OnInit, OnDestroy {
         this.getMachines();
       });
 
-    this.subscriptions.push(subscriptionMachines);
+    // this.subscriptions.push(subscriptionMachines);
   }
 
   ngOnDestroy() {

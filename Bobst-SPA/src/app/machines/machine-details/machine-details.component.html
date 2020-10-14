@@ -16,6 +16,6 @@
 </div>
 
 <app-machines-list
-  *ngIf="!displayDetails"
+  [hidden]="displayDetails"
   (notify)="getMachineDetails($event)"
 ></app-machines-list>
