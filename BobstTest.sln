@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{665A8D6F-ADC8-4CB3-A758-869593FC583D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{665A8D6F-ADC8-4CB3-A758-869593FC583D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F4096989-D6F1-4BA1-BD6F-635CC9276051}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{F4096989-D6F1-4BA1-BD6F-635CC9276051}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BobstTest.API", "BobstTest.API\BobstTest.API.csproj", "{5DB01869-72E0-4769-978A-BB6025B54E42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{5DB01869-72E0-4769-978A-BB6025B54E42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BobstTest.UnitTests", "BobstTest.UnitTests\BobstTest.UnitTests.csproj", "{4D6D98C5-936B-4561-9D8C-0ADF1894A28D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPITest", "WebAPITest\WebAPITest.csproj", "{4D6D98C5-936B-4561-9D8C-0ADF1894A28D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
