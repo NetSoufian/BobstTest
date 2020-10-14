@@ -15,8 +15,7 @@ namespace Infrastructure.Data
         {
               try
             {
-                // var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
+                
                 if (!context.Machines.Any())
                 {
                     var machinesData =
