@@ -2,5 +2,5 @@ export interface Machine {
   machineId: number;
   name: string;
   description: string;
-  production: number;
+  totalProduction?: number;
 }

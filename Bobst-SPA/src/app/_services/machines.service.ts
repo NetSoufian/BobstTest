@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Machine } from '../_models/machine';
+import { MachineTotalProduction } from '../_models/machineTotaleProduction';
 
 @Injectable()
 export class MachinesService {
@@ -20,6 +21,10 @@ getMachineDetails(id): Observable<Machine> {
 
 deleteMachine(id): Observable<number> {
   return this.http.delete<number>(this.baseUrl + 'machines/machine/' + id);
+}
+
+getTotalProduction(id): Observable<MachineTotalProduction> {
+  return this.http.get<MachineTotalProduction>(this.baseUrl + 'machines/machine/totalproduction/' + id);
 }
 
 }

@@ -1,38 +1,19 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Machine } from 'src/app/_models/machine';
-import { MachineDetails } from 'src/app/_models/machineDetails';
-import { MachinesService } from 'src/app/_services/machines.service';
 
 @Component({
   selector: 'app-machine-details',
   templateUrl: './machine-details.component.html',
   styleUrls: ['./machine-details.component.css']
 })
-export class MachineDetailsComponent implements OnDestroy {
+export class MachineDetailsComponent {
 
-  machineDetails: MachineDetails;
-  errorMsg = null;
-  displayDetails = false;
-  subscription: Subscription;
-  constructor(private machineService: MachinesService) { }
+  @Input() machineDetails: Machine;
+  @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-  getMachineDetails(machine: Machine) {
-    this.subscription = this.machineService.getMachineDetails(machine.machineId)
-      .subscribe(data => {
-        this.machineDetails = data;
-        this.machineDetails.production = machine.production;
-      }, error => this.errorMsg = error
-      );
-    this.displayDetails = true;
-  }
+  constructor() { }
 
   onCancel() {
-    this.displayDetails = false;
+    this.notify.emit(false) ;
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { Machine } from 'src/app/_models/machine';
 import { AlertifyService } from 'src/app/_services/alertify.service';
@@ -9,26 +9,19 @@ import { MachinesService } from 'src/app/_services/machines.service';
   templateUrl: './machines-list.component.html',
   styleUrls: ['./machines-list.component.css']
 })
-export class MachinesListComponent implements OnInit, OnDestroy {
+export class MachinesListComponent implements OnInit {
 
-  @Output() notify: EventEmitter<Machine> = new EventEmitter<Machine>();
-  machines: Machine[];
+  machines: Machine[] = [];
+  machine: Machine = null;
   errorMsg = null;
-  subscriptions: Subscription[] = [];
+  subscriptionMachineDetailes: Subscription;
+  displayDetails: boolean;
+  totaleProduction: number;
 
   constructor(private machinesService: MachinesService, private alertify: AlertifyService) { }
 
   ngOnInit() {
-    const subscriptionMachines = interval(5000).subscribe(
-      () => {
-        this.getMachines();
-      });
-
-    this.subscriptions.push(subscriptionMachines);
-  }
-
-  ngOnDestroy() {
-    this.subscriptions.forEach(sbs => sbs.unsubscribe());
+    this.getMachines();
   }
 
   getMachines() {
@@ -37,22 +30,42 @@ export class MachinesListComponent implements OnInit, OnDestroy {
         error => this.errorMsg = error);
   }
 
-  handleClick(id) {
-    this.notify.emit(this.machines.find(m => m.machineId === id));
+  getMachine(id) {
+    this.getMachineDetails(id);
+    this.subscriptionMachineDetailes = interval(5000).subscribe(
+      () => {
+        this.getMachineDetails(id);
+        this.alertify.success("Refreshed")
+      });
+  }
+
+  getMachineDetails(id) {
+    this.displayDetails = true;
+    this.machinesService.getMachineDetails(id)
+      .subscribe(data => {
+        this.machine = data;
+        this.machinesService.getTotalProduction(id).subscribe(
+          p => { this.machine.totalProduction = p.totalProduction;
+          }, error => this.errorMsg = error
+        );
+      }, error => this.errorMsg = error
+      );
   }
 
   onDelete(id) {
-    const subscriptionDelete = this.machinesService.deleteMachine(id)
+    this.machinesService.deleteMachine(id)
       .subscribe(data => {
         const isDeleted = data;
         if (isDeleted === 1) {
           this.getMachines();
-          this.subscriptions.push(subscriptionDelete);
           this.alertify.success('machine deleted succefully.');
         }
       },
         error => this.errorMsg = error);
   }
 
-
+  hideMachinesList(eventData: boolean) {
+    this.displayDetails = eventData;
+    this.subscriptionMachineDetailes.unsubscribe();
+  }
 }

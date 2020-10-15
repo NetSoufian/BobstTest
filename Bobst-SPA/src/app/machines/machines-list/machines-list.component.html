@@ -1,4 +1,4 @@
-<div class="container">
+<div [hidden]="displayDetails" class="container">
   <table class="table">
     <tr>
       <th>Id</th>
@@ -6,7 +6,7 @@
       <th>Production</th>
     </tr>
     <tr *ngFor="let machine of machines">
-      <td><a href="#" (click)="handleClick(machine.machineId)">{{machine.machineId}}</a></td>
+      <td><a href="#" (click)="getMachine(machine.machineId)">{{machine.machineId}}</a></td>
       <td>{{machine.name}}</td>
       <td>{{machine.production}}</td>
       <td>
@@ -15,3 +15,4 @@
     </tr>
   </table>
 </div>
+<app-machine-details *ngIf="displayDetails" [machineDetails]="machine" (notify)="hideMachinesList($event)" ></app-machine-details>
