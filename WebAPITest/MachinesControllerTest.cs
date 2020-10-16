@@ -28,7 +28,7 @@ namespace WebAPITest
         [Fact]
         public async Task Get_Machine_ReturnsSuccessStatusCode()
         {
-            var response = await _httpClient.GetAsync("/api/machines/machine/1");
+            var response = await _httpClient.GetAsync("/api/machines/machine/2");
 
             response.EnsureSuccessStatusCode();
         }
@@ -37,7 +37,7 @@ namespace WebAPITest
         [Fact]
         public async Task Get_TotalProduction_ReturnsSuccessStatusCode()
         {
-            var response = await _httpClient.GetAsync("/api/machines/machine/totalproduction/1");
+            var response = await _httpClient.GetAsync("/api/machines/machine/totalproduction/2");
 
             response.EnsureSuccessStatusCode();
         }
@@ -46,7 +46,7 @@ namespace WebAPITest
         [Fact]
         public async Task Get_Delete_ReturnsSuccessStatusCode()
         {
-            var response = await _httpClient.DeleteAsync("/api/machines/machine/1");
+            var response = await _httpClient.DeleteAsync("/api/machines/machine/7");
 
             response.EnsureSuccessStatusCode();
         }
