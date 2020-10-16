@@ -16,14 +16,6 @@ namespace Repository.Data
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
-           modelBuilder.Entity<MachineProduction>()
-            .HasKey(k => k.MachineProductionId);
-
-            modelBuilder.Entity<Machine>()
-            .HasOne<MachineProduction>(a => a.MachineProduction)
-            .WithOne(b => b.Machine)
-            .HasForeignKey<MachineProduction>(b => b.MachineId);
         }
     }
 }
