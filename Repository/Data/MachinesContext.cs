@@ -13,7 +13,7 @@ namespace Repository.Data
         public DbSet<Machine> Machines { get; set; }
         public DbSet<MachineProduction> MachineProductions { get; set; }
 
-         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
