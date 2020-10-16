@@ -25,15 +25,31 @@ CREATE TABLE [MachineProductions] (
 );
 
 GO
-INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (1, N'Machine A', N'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.')
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (1, 'Machine A', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.')
 GO
-INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (2, N'Machine B', N'Quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre.')
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (2, 'Machine B', 'It is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.')
 GO
-INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (3, N'Machine C', N'Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum.')
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (3, 'Machine C', 'To make a type specimen book.')
+GO
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (4, 'Machine D', 'There are many variations of passages of Lorem Ipsum available.')
+GO
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (5, 'Machine E', 'Contrary to popular belief, Lorem Ipsum is not simply random text.')
+GO
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (6, 'Machine F', 'Generate Lorem Ipsum which looks reasonable.')
+GO
+INSERT [dbo].[Machines] ([MachineId], [Name], [Description]) VALUES (7, 'Machine G', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.')
 GO
 INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (1, 3, 87)
 GO
 INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (2, 1, 30)
 GO
 INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (3, 2, 54)
+GO
+INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (4, 7, 187)
+GO
+INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (5, 6, 207)
+GO
+INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (6, 5, 98)
+GO
+INSERT [dbo].[MachineProductions] ([MachineProductionId], [MachineId], [TotalProduction]) VALUES (7, 4, 55)
 GO
